@@ -1,9 +1,11 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import type { NextPage } from "next";
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../styles/Home.module.css";
+import React, { useState } from "react";
 
 const Home: NextPage = () => {
+  const [waarde, setWaarde] = useState(0);
   return (
     <div className={styles.container}>
       <Head>
@@ -13,12 +15,14 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
+        <button onClick={() => setWaarde(waarde + 1)}>Press me daddy</button>
+        <h1> {waarde} </h1>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
+          Get started by editing{" "}
           <code className={styles.code}>pages/index.js</code>
         </p>
 
@@ -59,14 +63,14 @@ const Home: NextPage = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
